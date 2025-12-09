@@ -99,3 +99,27 @@ Aprender qué es y cómo funciona React, una librería creada por Facebook para 
   - Funciones asíncronas en manejadores de eventos
 - Autenticación
 - Contexto global: Context API
+
+## Desarrollo del módulo
+
+### Día 1 (Martes 09/12)
+
+- Introducción ¿Qué es React?
+  - Librería de JavaScript
+  - Principios básicos
+  - Elementos del DOM. React en un Script
+  - Componentes funcionales y JSX
+- Entorno de desarrollo con Vite
+  - Construcción de un proyecto real. Vite
+  - Requisitos previos
+  - Instalación de React y TypeScript con Vite
+
+[Descanso] - 21:00 a 21:20h
+
+- Estructura del proyecto creado con Vite
+  - Single Page Application (SPA)
+  - Estructura de carpetas y ficheros
+  - Comandos (scripts) disponibles
+- Componentes
+  - Componentes y funciones
+  - Construcción de componentes: Componentización
