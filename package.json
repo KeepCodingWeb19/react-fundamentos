@@ -1,0 +1,23 @@
+{
+  "name": "react-fundamentos",
+  "version": "1.0.0",
+  "type": "module",
+  "workspaces": [
+    "projects/*"
+  ],
+  "description": "React Fundamentos- Bootcamp de Desarrollo Web 19. KeepCoding",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeepCodingWeb19/react-fundamentos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "prettier": {
+    "singleQuote": false
+  }
+}
