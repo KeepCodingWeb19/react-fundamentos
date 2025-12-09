@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Basic</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      #root {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .title {
+        font-size: 2rem;
+        color: rgb(84, 84, 146);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>React Demo</h1>
+    <div id="root"></div>
+    <script type="text/babel">
+      // Componentes de React
+
+      const Title = () => {
+        const text = 'Hello, React!';
+        return (
+          <header>
+            <h2 className="title" title="Greeting Title">
+              {text}
+            </h2>
+            <p>{2+Math.random()}</p>
+          </header>
+        );
+      };
+
+      const App = () => {
+        return (
+          <React.Fragment>
+            <div>
+              <Title />
+              <Title />
+              <Title />
+              <Title />
+              {/* Esto es un comentario de JSX */}
+              <p style={{ color: 'blue', fontSize: '1.5rem' }}>
+                Probando react como script puro.
+              </p>
+              <img
+                src="https://reactjs.org/logo-og.png"
+                alt="React Logo"
+                width="200"
+              />
+            </div>
+            <p>Hola</p>
+          </React.Fragment>
+        );
+      };
+
+      const root = document.getElementById('root');
+
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>

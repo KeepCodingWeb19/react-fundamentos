@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Basic</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      #root {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>React Demo</h1>
+    <div id="root"></div>
+    <script>
+
+      // Componente de React
+      const App = () => {
+        const element = React.createElement(
+          'div',
+          null,
+          React.createElement(
+            'h2',
+            { style: { fontSize: '2rem' } },
+            'Hello, React!'
+          ),
+          React.createElement(
+            'p',
+            { style: { color: 'blue' } },
+            'Probando react como script puro.'
+          )
+        );
+        console.log(element);
+        return element;
+      };
+
+      const root = document.getElementById('root');
+
+      ReactDOM.render(React.createElement(App), root);
+    </script>
+  </body>
+</html>
