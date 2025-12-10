@@ -117,9 +117,43 @@ Aprender qué es y cómo funciona React, una librería creada por Facebook para 
 [Descanso] - 21:00 a 21:20h
 
 - Estructura del proyecto creado con Vite
+  - Client Side Rendering
   - Single Page Application (SPA)
   - Estructura de carpetas y ficheros
-  - Comandos (scripts) disponibles
+    - index.html -> main.tsx -> App
+  - Comandos (scripts) disponibles con Vite
 - Componentes
   - Componentes y funciones
   - Construcción de componentes: Componentización
+    - Header y Footer a partir de la App Inicial
+
+### Día 2 (Miércoles 10/12)
+
+- Construcción de componentes: Componentización
+  - Componentes y props. Children
+  - Componentización y composición de componentes
+    - Card
+    - Menu
+    - Logos
+    - Cambios en Header y App
+  - Estilos en los componentes
+    - Module CSS
+
+[Descanso] - 21:00 a 21:20h
+
+- Componentes dinámicos. Eventos
+  - Condiciones en los componentes. Greeting
+  - Iteraciones: renderizado de listas. Menu
+  - Manejo de eventos. Tipado de eventos
+    - PanicButton
+    - Componente Button genérico
+
+### Día 3 (Jueves 11/12)
+
+- Hooks
+  - Reglas de los Hooks
+  - Hooks y estado: useState
+  - Efectos secundarios: useEffect
+  - Referencias persistentes: useRef, useMemo, useCallback
+
+[Descanso] - 21:00 a 21:20h
