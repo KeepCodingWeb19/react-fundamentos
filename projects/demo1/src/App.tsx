@@ -1,9 +1,6 @@
-import { Header } from "@core/components/header/header";
-import { Footer } from "@core/components/footer/footer";
-import { Counter } from "@features/home/counter/counter";
-import { Logos } from "@core/components/logos/logos";
-import { Menu } from "@core/components/menu/menu";
 import type { MenuOption } from "@core/types/menu-option";
+import { Layout } from "@core/components/layout/layout";
+import { HomePage } from "@features/home/home-page";
 import "./App.css";
 
 export const App: React.FC = () => {
@@ -11,19 +8,18 @@ export const App: React.FC = () => {
     const subTitle = "React - TS  Vite";
     const menuOptions: MenuOption[] = [
         { path: "/", label: "Inicio" },
+        { path: "/Products", label: "Productos" },
+        { path: "/user", label: "Profile" },
         { path: "/about", label: "Acerca de" },
     ];
 
     return (
-        <>
-            <Header title={appTitle} subTittle={subTitle}>
-                <Menu options={menuOptions} />
-                <Logos />
-            </Header>
-            <main>
-                <Counter />
-            </main>
-            <Footer />
-        </>
+        <Layout
+            appTitle={appTitle}
+            subTitle={subTitle}
+            menuOptions={menuOptions}
+        >
+            <HomePage />
+        </Layout>
     );
 };
