@@ -1,21 +1,19 @@
 import type { MenuOption } from "@core/types/menu-option";
-import "./menu.css"
+import "./menu.css";
 
 type Props = {
-    options: MenuOption[]
-}
+    options: MenuOption[];
+};
 
-export const Menu: React.FC<Props> = ({ options}) => {
-   
+export const Menu: React.FC<Props> = ({ options }) => {
     return (
         <nav>
             <ul>
-                <li>
-                    <a href={options[0].path}> {options[0].label} </a>
-                </li>
-                <li>
-                    <a href={options[1].path}> {options[1].label} </a>
-                </li>
+                {options.map((item) => (
+                    <li key={item.path}>
+                        <a href={item.path}> {item.label}</a>
+                    </li>
+                ))}
             </ul>
         </nav>
     );

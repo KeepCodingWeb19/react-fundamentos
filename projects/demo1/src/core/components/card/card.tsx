@@ -9,7 +9,7 @@ type Props = {
 export const Card: React.FC<Props> = ({ children, title }) => {
     return (
         <div className="card">
-            <h3>{title}</h3>
+            {title && <h3>{title}</h3> }
             {children}
         </div>
     );
