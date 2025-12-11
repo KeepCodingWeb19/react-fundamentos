@@ -2,7 +2,7 @@ import { Card } from "@core/components/card/card";
 import React from "react";
 
 type Props = {
-    userName?: string;
+    readonly userName?: string;
 };
 
 export const Greetings: React.FC<Props> = ({ userName }) => {

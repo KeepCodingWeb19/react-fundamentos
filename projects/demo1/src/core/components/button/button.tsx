@@ -2,8 +2,8 @@ import type { MouseEvent, MouseEventHandler } from "react";
 import './button.css'
 
 type Props = {
-    children: string;
-    className?: string;
+    readonly children: string;
+    readonly className?: string;
     onClick: MouseEventHandler<HTMLButtonElement>;
     [key: string]: unknown
 };

@@ -2,7 +2,7 @@ import type { MenuOption } from "@core/types/menu-option";
 import "./menu.css";
 
 type Props = {
-    options: MenuOption[];
+    readonly options: MenuOption[];
 };
 
 export const Menu: React.FC<Props> = ({ options }) => {
