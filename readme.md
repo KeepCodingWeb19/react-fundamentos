@@ -153,7 +153,12 @@ Aprender qué es y cómo funciona React, una librería creada por Facebook para 
 - Hooks
   - Reglas de los Hooks
   - Hooks y estado: useState
-  - Efectos secundarios: useEffect
-  - Referencias persistentes: useRef, useMemo, useCallback
 
 [Descanso] - 21:00 a 21:20h
+
+- Efectos secundarios: useEffect
+- Referencias persistentes: useRef
+  - persistencia de variables
+  - elementos del DOM
+  - (mencionados useMemo, useCallback)
+- Formularios controlados de 1 campo
