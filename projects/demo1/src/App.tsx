@@ -2,6 +2,8 @@ import type { MenuOption } from "@core/types/menu-option";
 import { Layout } from "@core/components/layout/layout";
 import { HomePage } from "@features/home/home-page";
 import "./App.css";
+import { DashboardPage } from "@features/dashboard/dashboard-page";
+import { FormsPage } from "@features/forms/forms-page";
 
 export const App: React.FC = () => {
     const appTitle = "Demo 1";
@@ -20,6 +22,8 @@ export const App: React.FC = () => {
             menuOptions={menuOptions}
         >
             <HomePage />
+            <DashboardPage />
+            <FormsPage />
         </Layout>
     );
 };
