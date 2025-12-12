@@ -3,7 +3,7 @@ import { Layout } from "@core/components/layout/layout";
 import "./App.css";
 
 import { getOptions } from "@core/router/routes";
-import { Router } from "@core/router/router3";
+import { Outlet } from "react-router";
 
 export const App: React.FC = () => {
     const appTitle = "Demo 2";
@@ -27,7 +27,7 @@ export const App: React.FC = () => {
             subTitle={subTitle}
             menuOptions={menuOptions}
         >
-            <Router />
+            <Outlet />
         </Layout>
     );
 };
