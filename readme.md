@@ -161,4 +161,46 @@ Aprender qué es y cómo funciona React, una librería creada por Facebook para 
   - persistencia de variables
   - elementos del DOM
   - (mencionados useMemo, useCallback)
-- Formularios controlados de 1 campo
+- Formularios
+  - Tipos de formularios en React
+  - Formularios controlados de 1 campo
+
+### Día 4 (Viernes 12/12)
+
+- Formularios (continuación)
+  - Formularios controlados con un campo
+  - Formularios controlados con múltiples campos
+  - Validación de formularios con HTMLs
+  - Formularios no controlados. FormData
+
+[Descanso] - 21:00 a 21:20h
+
+- Rutas nativas en React
+  - Componente Router: Presentación de las Vistas (páginas)
+  - Componente Link: Navegación entre páginas
+  - Uso del componente Link
+  - Escuchar cambios en la URL
+  - Diferencias con librerías de routing
+- Custom Hooks: Hook useRouter
+- La librería React Router
+  - Instalación
+  - React Router modo data (Programático)
+
+<!-- ### Día 5 (Lunes 15/12)
+
+- La librería React Router (continuación)
+
+  - Lazy Loading
+
+- Patrón contenedor/presentador. Rutas dinámicas
+  - Página de Productos y su ruta en el array de rutas
+  - Entidad, servicio y datos
+  - CRUD de productos: ProductsList, ProductCard y ProductForm
+  - Rutas dinámicas
+
+[Descanso] - 21:00 a 21:20h
+
+- ¿Patrones de abstracción de datos?
+- Inicio de APIs -->
+
+ <!-- ### Día 6 (Martes 16/12) -->
