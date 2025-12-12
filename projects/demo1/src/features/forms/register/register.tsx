@@ -1,6 +1,6 @@
-import { Card } from '@core/components/card/card';
-import { useId } from 'react';
-import './register.css';
+import { Card } from "@core/components/card/card";
+import { useId } from "react";
+import "./register.css";
 
 export type Register = {
     userName: string;
@@ -16,12 +16,12 @@ type UserIDs = {
 };
 
 const userDataInitial: Register = {
-    userName: '....',
-    email: '.....',
-    password: '....',
+    userName: "",
+    email: "",
+    password: "",
     isOkConditions: false,
-    turn: '',
-    course: '',
+    turn: "",
+    course: "",
 };
 
 export const RegisterForm: React.FC = () => {
@@ -34,11 +34,23 @@ export const RegisterForm: React.FC = () => {
         course: useId(),
     };
 
-    const handleSubmit = (ev: React.FormEvent<HTMLFormElement>): void => {
+    const handleSubmit: React.FormEventHandler<HTMLFormElement> = (ev) => {
         ev.preventDefault();
-        const form = ev.currentTarget; // EventTarget & HTMLFormElement
         console.log(userDataInitial);
-        console.log(form);
+        const form = ev.currentTarget; // EventTarget & HTMLFormElement
+        console.dir(form);
+        const formData = new FormData(form);
+        const result: Record<string, string | boolean > = {
+            isOkConditions: false,
+        };
+        for (const [key, value] of formData) {
+            if (value === "on" || !value) {
+                result[key] = value === "on";
+            } else {
+                result[key] = value as string;
+            }
+        }
+        console.log(result);
     };
     return (
         <Card title="Formulario de registro">
@@ -51,7 +63,7 @@ export const RegisterForm: React.FC = () => {
                         required
                         name="userName"
                         id={registerIds.userName}
-                        defaultValue={userDataInitial.userName}
+                        //defaultValue={userDataInitial.userName}
                     />
                 </div>
 
@@ -62,7 +74,7 @@ export const RegisterForm: React.FC = () => {
                         required
                         name="email"
                         id={registerIds.email}
-                        defaultValue={userDataInitial.email}
+                        //defaultValue={userDataInitial.email}
                     />
                 </div>
 
@@ -73,7 +85,7 @@ export const RegisterForm: React.FC = () => {
                         required
                         name="password"
                         id={registerIds.password}
-                        defaultValue={userDataInitial.password}
+                        //defaultValue={userDataInitial.password}
                     />
                 </div>
 
@@ -82,7 +94,7 @@ export const RegisterForm: React.FC = () => {
                         type="checkbox"
                         id={registerIds.isOkConditions}
                         name="isOkConditions"
-                        defaultChecked={userDataInitial.isOkConditions}
+                        //defaultChecked={userDataInitial.isOkConditions}
                     />
                     <label htmlFor={registerIds.isOkConditions}>
                         Acepto las condiciones...
@@ -92,30 +104,30 @@ export const RegisterForm: React.FC = () => {
                 <fieldset name="turn">
                     <legend>Selecciona un turno</legend>
                     <div className="group-control-line">
-                        <label htmlFor={registerIds.turn + '-m'}>
+                        <label htmlFor={registerIds.turn + "-m"}>
                             <input
                                 type="radio"
                                 name="turn"
-                                id={registerIds.turn + '-m'}
+                                id={registerIds.turn + "-m"}
                                 value="M"
                             />
                             <span>Mañana</span>
                         </label>
 
-                        <label htmlFor={registerIds.turn + '-t'}>
+                        <label htmlFor={registerIds.turn + "-t"}>
                             <input
                                 type="radio"
                                 name="turn"
-                                id={registerIds.turn + '-t'}
+                                id={registerIds.turn + "-t"}
                                 value="T"
                             />
                             <span>Tarde</span>
                         </label>
-                        <label htmlFor={registerIds.turn + '-n'}>
+                        <label htmlFor={registerIds.turn + "-n"}>
                             <input
                                 type="radio"
                                 name="turn"
-                                id={registerIds.turn + '-n'}
+                                id={registerIds.turn + "-n"}
                                 value="N"
                             />
                             <span>Noche</span>
@@ -128,7 +140,7 @@ export const RegisterForm: React.FC = () => {
                         <select
                             name="course"
                             id={registerIds.course}
-                            defaultValue={userDataInitial.course}
+                            //defaultValue={userDataInitial.course}
                         >
                             <option value=""></option>
                             <option value="A">Angular</option>

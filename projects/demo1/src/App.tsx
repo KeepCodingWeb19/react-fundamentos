@@ -1,19 +1,25 @@
 import type { MenuOption } from "@core/types/menu-option";
 import { Layout } from "@core/components/layout/layout";
-import { HomePage } from "@features/home/home-page";
 import "./App.css";
-import { DashboardPage } from "@features/dashboard/dashboard-page";
-import { FormsPage } from "@features/forms/forms-page";
+
+import { getOptions } from "@core/router/routes";
+import { Router } from "@core/router/router3";
 
 export const App: React.FC = () => {
     const appTitle = "Demo 1";
     const subTitle = "React - TS  Vite";
-    const menuOptions: MenuOption[] = [
-        { path: "/", label: "Inicio" },
-        { path: "/Products", label: "Productos" },
-        { path: "/user", label: "Profile" },
-        { path: "/about", label: "Acerca de" },
-    ];
+
+    const menuOptions: MenuOption[] = getOptions();
+    menuOptions.push({ path: "/about", label: "Acerca de" });
+    // [
+    //     { path: "/home", label: "Inicio" },
+    //     { path: "/dashboard", label: "Dashboard" },
+    //     { path: "/forms", label: "Formularios" },
+    //     { path: "/about", label: "Acerca de" },
+    //     //  { path: "/Products", label: "Productos" },
+    //     // { path: "/user", label: "Profile" },
+    //     // { path: "/about", label: "Acerca de" },
+    // ];
 
     return (
         <Layout
@@ -21,9 +27,7 @@ export const App: React.FC = () => {
             subTitle={subTitle}
             menuOptions={menuOptions}
         >
-            <HomePage />
-            <DashboardPage />
-            <FormsPage />
+            <Router />
         </Layout>
     );
 };
