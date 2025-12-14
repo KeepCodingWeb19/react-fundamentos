@@ -188,8 +188,17 @@ Aprender qué es y cómo funciona React, una librería creada por Facebook para 
 
 <!-- ### Día 5 (Lunes 15/12)
 
-- La librería React Router (continuación)
+- Repaso Router
+  - Router con React nativo -> comentar error del Hook
+  - ReactRouter
+    1. Array de rutas: modificaciones
+    2. Definir Outlet en App
+    3. main: Crear router y añadir al provider
+    4. usar Link de react-router
+  
 
+- La librería React Router (continuación)
+  - Redirecciones en las rutas
   - Lazy Loading
 
 - Patrón contenedor/presentador. Rutas dinámicas
