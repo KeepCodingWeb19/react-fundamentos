@@ -1,10 +1,14 @@
 import { Card } from "@core/components/card/card";
 import type { MenuOption } from "@core/types/menu-option";
-import { DashboardPage } from "@features/dashboard/dashboard-page";
-import { FormsPage } from "@features/forms/forms-page";
-import { HomePage } from "@features/home/home-page";
-import type { RouteObject } from "react-router";
+import { redirect, type RouteObject } from "react-router";
 import { App } from "../../App";
+import React from "react";
+
+const HomePage = React.lazy(() => import("@features/home/home-page"));
+const DashboardPage = React.lazy(
+    () => import("@features/dashboard/dashboard-page")
+);
+const ProductsPage = React.lazy(() => import('@features/products/products-page')) 
 
 export const routes: RouteObject[] = [
     {
@@ -18,8 +22,15 @@ export const routes: RouteObject[] = [
             },
             {
                 path: "/home",
-                Component: HomePage,
+                loader: (): void => {
+                    throw redirect("/");
+                },
                 id: "Inicio",
+            },
+              {
+                path: "/products",
+                Component: ProductsPage,
+                id: "Productos",
             },
             {
                 path: "/dashboard",
@@ -28,7 +39,10 @@ export const routes: RouteObject[] = [
             },
             {
                 path: "/forms",
-                Component: FormsPage,
+                lazy: {
+                    Component: async () =>
+                        (await import("@features/forms/forms-page")).FormsPage,
+                },
                 id: "Formularios",
             },
             {
