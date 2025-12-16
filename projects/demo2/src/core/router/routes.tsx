@@ -12,6 +12,13 @@ const ProductsPage = React.lazy(
     () => import("@features/products/products-page")
 );
 
+const protectedRoute = (): void => {
+    const token = localStorage.getItem('sparest-token')
+    if (!token) {
+        throw redirect("/");
+    }
+}
+
 export const routes: RouteObject[] = [
     {
         path: "/",
@@ -30,11 +37,13 @@ export const routes: RouteObject[] = [
                 id: "Inicio",
             },
             {
+                loader: protectedRoute,
                 path: "/products",
                 Component: ProductsPage,
                 id: "Productos",
             },
             {
+                loader: protectedRoute,
                 path: "/products/:id",
                 Component: ProductsPage,
             },

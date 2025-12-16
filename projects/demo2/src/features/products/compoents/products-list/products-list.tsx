@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ProductForm } from "../product-form/product-form";
 import { ProductItem } from "../product-item/product-item";
 import type { Product } from "@features/products/types/product";
-import { getDataAsync } from "@features/products/services/products-mock";
 import "./products-list.css";
+import { useProducts } from "./use-products";
+import { Card } from "@core/components/card/card";
 
 export const ProductsList: React.FC = () => {
-    const initialProducts: Product[] = [];
-    const [products, setProducts] = useState<Product[]>(initialProducts);
+
+
+    const {products, error, addProduct, updateProduct, deleteProduct} = useProducts();
+
     const [showForm, setShowForm] = useState<boolean>(false);
     const [activeProduct, setActiveProduct] = useState<Product | null>(null);
 
@@ -29,39 +32,21 @@ export const ProductsList: React.FC = () => {
         console.log(product);
         if (product) {
             if (isEditing) {
-                handleUpdateProduct(product);
+                updateProduct(product);
             } else {
-                handleAddProduct(product);
+                addProduct(product);
             }
         }
     };
 
-    /// Funciones responsables del CRUD
-    const handleDeleteProduct = (product: Product): void => {
-        setProducts(products.filter((item) => item.id != product.id));
-    };
+    if (error) {
+        return <div className="products-wrapper">
+            <Card title="Error">
+                <p>{error.message}</p>
+            </Card>
+        </div>
 
-    const handleUpdateProduct = (product: Product): void => {
-        setProducts(
-            products.map((item) => (item.id === product.id ? product : item))
-        );
-    };
-
-    const handleAddProduct = (product: Product): void => {
-        product.id = crypto.randomUUID().slice(0,4)
-        setProducts([product, ...products]);
-    };
-
-    useEffect(() => {
-        // getDataAsync().then((data) => setProducts(data));
-
-        const load = async (): Promise<void> => {
-            const data = await getDataAsync();
-            setProducts(data);
-        };
-
-        load();
-    }, []);
+    }
 
     return (
         <div className="products-wrapper">
@@ -76,7 +61,7 @@ export const ProductsList: React.FC = () => {
                                 <ProductItem
                                     product={item}
                                     onEdit={handleEditForm}
-                                    onDelete={handleDeleteProduct}
+                                    onDelete={deleteProduct}
                                 />
                             </li>
                         ))}

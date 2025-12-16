@@ -1,6 +1,11 @@
 {
   "products": [
-    { "id": 1, "name": "Update product 1", "price": 10, "userId": 2 },
+    {
+      "id": 1,
+      "name": "Update product 1",
+      "price": 10,
+      "userId": 2
+    },
     {
       "name": "Mouse",
       "userId": 2,
@@ -34,6 +39,11 @@
       "turn": "M",
       "course": "A",
       "id": 4
+    },
+    {
+      "username": "pepa",
+      "password": "$2b$10$zZhyVfeD7fMDe9ma.5hWXOiwBqRroyq1Qm5VliHy0lUqgT4t71iKm",
+      "id": 5
     }
   ],
   "vehicles": [

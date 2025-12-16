@@ -12,3 +12,5 @@ export type Product = {
   cargoCapacity: number;
   consumables: string;
 };
+
+export type ProductDTO = Omit<Product, 'id'>
