@@ -218,10 +218,27 @@ Aprender qué es y cómo funciona React, una librería creada por Facebook para 
 - Rutas dinámicas
   - Página de detalle
 
- <!-- ### Día 6 (Martes 16/12) 
+### Día 6 (Martes 16/12)
 
-- ¿Patrones de abstracción de datos?
-- APIs 
+- Patrones de abstracción de datos
+  - Custom Hooks: lógica del estado
+  - Capa repositorio -> APIS
+  
+- APIs
+  - Backend real can sparest
+  - Carga de datos: del mock asinncrono a la api real
+    - Creación de métodos en el repo
+    - Uso en los hook
+  
+  [Descanso] - 21:00 a 21:20h
+
+  - Métodos CUD en el repo
+  - Incorporación en el hook: estrategia optimista
+  - Pruebas de los componentes
+
 - Autenticación
-
-- -->
+  - Configuración y funcionamiento en sparest
+  - Protección de rutas
+  - Cabeceras de Autenticación
+  - Lógica en useAuth
+  - Repaso de los componentes Register, Login, Logout. User
